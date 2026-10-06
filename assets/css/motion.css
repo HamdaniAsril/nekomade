@@ -1,0 +1,564 @@
+/* Motion layer. Everything here is additive: without the `motion` class on
+   <html> (no JS, or prefers-reduced-motion) the site renders exactly as before. */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@supports (transition-timing-function: linear(0, 1)) {
+  :root {
+    --spring: linear(
+      0, 0.009, 0.035 2.1%, 0.141 4.4%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121,
+      1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%,
+      0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1
+    );
+  }
+}
+
+/* Page-to-page transitions */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  .header {
+    view-transition-name: header;
+  }
+
+  ::view-transition-old(root) {
+    animation: vt-out 0.22s ease-in both;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-in 0.5s var(--ease-out) both;
+  }
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    translate: 0 -12px;
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+}
+
+/* Scroll thread + yarn cursor */
+
+.scroll-thread {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--coral);
+  transform: scaleX(var(--progress, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.yarn-canvas {
+  position: fixed;
+  z-index: 998;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.yarn-ball {
+  position: fixed;
+  z-index: 999;
+  top: -13px;
+  left: -13px;
+  width: 26px;
+  height: 26px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.yarn-ball.is-on {
+  opacity: 1;
+}
+
+.yarn-ball svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transition: scale 0.5s var(--spring);
+}
+
+.yarn-ball.is-hover svg {
+  scale: 1.5;
+}
+
+.yarn-ball.is-down svg {
+  scale: 0.75;
+}
+
+/* Scroll reveals */
+
+.motion .reveal {
+  opacity: 0;
+  translate: 0 28px;
+  transition:
+    opacity 0.7s ease-out var(--d, 0ms),
+    translate 1s var(--ease-out) var(--d, 0ms);
+}
+
+.motion .reveal.is-in {
+  opacity: 1;
+  translate: none;
+}
+
+.motion .panel.reveal {
+  translate: 0 56px;
+}
+
+.motion .panel.reveal.is-in {
+  translate: none;
+}
+
+.motion .panel__visual {
+  translate: 0 calc(var(--par, 0) * 22px);
+}
+
+.motion .panel__visual img {
+  transition:
+    translate 1.2s var(--ease-out) calc(var(--d, 0ms) + 120ms),
+    scale 0.8s var(--ease-out);
+}
+
+.motion .panel.reveal:not(.is-in) .panel__visual img {
+  translate: 90px 0;
+}
+
+.motion .panel:hover .panel__visual img {
+  scale: 1.025;
+}
+
+.motion .mamakana__short {
+  animation: float 5s ease-in-out infinite;
+}
+
+.motion .mamakana__short--b {
+  animation-delay: -2.5s;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+}
+
+/* Cats that peek up from behind their crop */
+
+.motion .peek {
+  opacity: 1;
+  translate: none;
+}
+
+.motion .peek img,
+.motion .tile--neko img {
+  transition: translate 1.1s var(--spring) calc(var(--d, 0ms) + 150ms);
+}
+
+.motion .peek:not(.is-in) img,
+.motion .tile--neko.reveal:not(.is-in) img {
+  translate: 0 62%;
+}
+
+.motion .head-illo img {
+  rotate: calc(var(--mx, 0) * 2deg);
+}
+
+/* Title pills pop in, then wiggle on hover */
+
+.motion .title-pill,
+.motion .status-pill {
+  display: inline-block;
+}
+
+.motion .reveal .title-pill {
+  transition:
+    scale 0.9s var(--spring) calc(var(--d, 0ms) + 180ms),
+    rotate 0.9s var(--spring) calc(var(--d, 0ms) + 180ms);
+}
+
+.motion .reveal:not(.is-in) .title-pill {
+  scale: 0.4;
+  rotate: -14deg;
+}
+
+.motion .rail__title:hover .title-pill,
+.motion .head-title:hover .title-pill,
+.motion .work-row:hover .status-pill {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+@keyframes wiggle {
+  25% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  85% {
+    transform: rotate(-1.5deg);
+  }
+}
+
+/* Hero entrance (home) */
+
+.motion .hero__disc {
+  animation: pop 1s var(--spring) 0.05s both;
+}
+
+.motion .hero__illo img {
+  animation: cat-in 0.9s var(--spring) 0.25s both;
+  translate: calc(var(--mx, 0) * 12px) calc(var(--my, 0) * 6px + var(--sy, 0) * 0.12px);
+  rotate: calc(var(--mx, 0) * 3deg);
+  transform-origin: 50% 80%;
+}
+
+.motion .hero__disc {
+  translate: calc(var(--mx, 0) * -8px) calc(var(--my, 0) * -5px + var(--sy, 0) * 0.3px);
+}
+
+@keyframes pop {
+  from {
+    scale: 0;
+  }
+}
+
+@keyframes cat-in {
+  from {
+    opacity: 0;
+    scale: 0.7;
+  }
+}
+
+.motion .headline:not(.is-split) {
+  opacity: 0;
+}
+
+.motion .headline .word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.motion .headline .char {
+  display: inline-block;
+  animation: char-in 0.9s var(--spring) both;
+  animation-delay: calc(var(--i) * 32ms + 0.35s);
+}
+
+@keyframes char-in {
+  from {
+    opacity: 0;
+    translate: 0 0.7em;
+    rotate: 10deg;
+  }
+}
+
+.motion .headline__serif {
+  position: relative;
+}
+
+.headline__squiggle {
+  position: absolute;
+  bottom: -0.04em;
+  left: 3%;
+  width: 94%;
+  height: 0.13em;
+  overflow: visible;
+  fill: none;
+  stroke: var(--coral);
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: draw 0.9s var(--ease-out) 1.25s both;
+}
+
+@keyframes draw {
+  from {
+    clip-path: inset(-50% 100% -50% 0);
+  }
+  to {
+    clip-path: inset(-50% -2% -50% 0);
+  }
+}
+
+.motion .hero__intro {
+  animation: rise 0.9s var(--ease-out) 0.95s both;
+}
+
+.motion .hero .pills li {
+  animation: pill-in 0.8s var(--spring) both;
+  animation-delay: calc(1.15s + var(--i, 0) * 70ms);
+}
+
+.motion .hero .pills li:nth-child(2) {
+  --i: 1;
+}
+
+.motion .hero .pills li:nth-child(3) {
+  --i: 2;
+}
+
+.motion .hero .pills li:nth-child(4) {
+  --i: 3;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+}
+
+@keyframes pill-in {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    translate: 0 18px;
+  }
+}
+
+/* Small interactions */
+
+.motion .brand__icon {
+  animation: roll-in 1.1s var(--spring) both;
+  transition: rotate 0.9s var(--spring);
+}
+
+.motion .brand:hover .brand__icon {
+  rotate: 360deg;
+}
+
+@keyframes roll-in {
+  from {
+    opacity: 0;
+    transform: translateX(-28px) rotate(-360deg);
+  }
+}
+
+.motion .nav a,
+.motion .panel__link,
+.motion .foot-row a,
+.motion .kontak__email,
+.motion .kontak__socials a,
+.motion .footer a {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 1.5px;
+  transition:
+    background-size 0.45s var(--ease-out),
+    color 0.2s ease;
+}
+
+.motion .nav a {
+  padding-bottom: 3px;
+}
+
+.motion .nav a:hover,
+.motion .nav a[aria-current="page"],
+.motion .panel__link:hover,
+.motion .foot-row a:hover,
+.motion .kontak__email:hover,
+.motion .kontak__socials a:hover,
+.motion .footer a:hover {
+  background-size: 100% 1.5px;
+}
+
+.motion .pill {
+  transition: transform 0.6s var(--spring);
+}
+
+.motion a.pill:hover {
+  transform: translateY(-4px) rotate(-2.5deg);
+}
+
+.motion li:nth-child(even) > a.pill:hover {
+  transform: translateY(-4px) rotate(2.5deg);
+}
+
+.motion a.pill:active {
+  transform: scale(0.94);
+}
+
+.motion .magnetic {
+  transition:
+    opacity 0.7s ease-out,
+    translate 0.6s var(--spring),
+    background-color 0.2s ease;
+}
+
+.motion .magnetic svg {
+  transition: transform 0.5s var(--spring);
+}
+
+.motion .magnetic:hover svg {
+  transform: translateX(4px);
+}
+
+.motion .tile,
+.motion .photo-slot {
+  transform: perspective(800px) rotateX(calc(var(--ty, 0) * -7deg))
+    rotateY(calc(var(--tx, 0) * 7deg));
+  transition:
+    opacity 0.7s ease-out var(--d, 0ms),
+    translate 1s var(--ease-out) var(--d, 0ms),
+    transform 0.7s var(--spring),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.motion .tile.is-tilting,
+.motion .photo-slot.is-tilting {
+  border-color: var(--ink);
+  box-shadow: 0 18px 40px -18px #16161a40;
+  transition-duration: 0.7s, 1s, 0.12s, 0.3s, 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.motion .tile__no,
+.motion .slot__no {
+  transition: transform 0.7s var(--spring);
+}
+
+.motion .tile:hover .tile__no,
+.motion .slot:hover .slot__no {
+  transform: rotate(360deg) scale(1.12);
+}
+
+.motion .tile--neko img {
+  transform-origin: 50% 70%;
+}
+
+.motion .tile--neko:hover img {
+  animation: bat 0.7s ease-in-out infinite;
+}
+
+@keyframes bat {
+  30% {
+    transform: rotate(-5deg);
+  }
+  65% {
+    transform: rotate(4deg);
+  }
+}
+
+.motion .slot {
+  transition:
+    opacity 0.7s ease-out var(--d, 0ms),
+    translate 1s var(--ease-out) var(--d, 0ms),
+    border-color 0.3s ease;
+}
+
+.motion .slot:hover {
+  border-color: var(--ink);
+}
+
+.motion .work-row__title,
+.motion .work-row__no {
+  transition: transform 0.6s var(--spring);
+}
+
+.motion .work-row:hover .work-row__title {
+  transform: translateX(10px);
+}
+
+.motion .work-row:hover .work-row__no {
+  transform: translateX(4px);
+}
+
+.motion .playground__logo {
+  transition: transform 0.8s var(--spring);
+}
+
+.motion .playground li:hover .playground__logo {
+  transform: rotate(360deg) scale(1.2);
+}
+
+/* Day bar fills up */
+
+.motion .day__seg {
+  clip-path: inset(0 100% 0 0 round 12px);
+  transition:
+    clip-path 1.1s var(--ease-out),
+    transform 0.5s var(--spring);
+}
+
+.motion .day.is-in .day__seg {
+  clip-path: inset(0 0 0 0 round 12px);
+}
+
+.motion .day.is-in .day__seg:nth-child(1) {
+  transition-delay: 0.25s, 0s;
+}
+
+.motion .day.is-in .day__seg:nth-child(2) {
+  transition-delay: 0.5s, 0s;
+}
+
+.motion .day.is-in .day__seg:nth-child(3) {
+  transition-delay: 0.7s, 0s;
+}
+
+.motion .day__seg:hover {
+  transform: translateY(-4px);
+}
+
+/* Kontak */
+
+.motion .kontak__neko {
+  transform-origin: 50% 85%;
+  animation: breathe 4.5s ease-in-out infinite;
+  transition:
+    opacity 0.8s ease-out,
+    translate 1.4s var(--spring);
+}
+
+.motion .kontak__neko.reveal:not(.is-in) {
+  translate: 120px 0;
+}
+
+@keyframes breathe {
+  50% {
+    transform: scale(1.02, 0.985) rotate(-0.6deg);
+  }
+}
+
+.motion .kontak__headline svg {
+  animation: nudge 2.4s var(--ease-out) infinite;
+}
+
+@keyframes nudge {
+  50% {
+    translate: 0.06em -0.06em;
+  }
+}
+
+@media print {
+  .scroll-thread,
+  .yarn-canvas,
+  .yarn-ball {
+    display: none;
+  }
+
+  .motion .reveal,
+  .motion .reveal * {
+    opacity: 1 !important;
+    translate: none !important;
+    scale: none !important;
+    rotate: none !important;
+    clip-path: none !important;
+  }
+}
