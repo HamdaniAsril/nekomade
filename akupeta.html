@@ -52,7 +52,6 @@
         <a href="chillin.html" aria-current="page">Chillin’</a>
         <a href="pokin.html">Pokin’</a>
         <a href="tinkerin.html">Tinkerin’</a>
-        <a href="playin.html">Playin’</a>
         <a href="about.html">About</a>
       </nav>
       <a class="talk" href="colek.html">
@@ -87,7 +86,7 @@
           <p class="story-lead story-lead--xl">Susunan organisasi diubah sekali, bagannya langsung ikut.</p>
           <ul class="stats">
             <li class="stat"><strong>1</strong><span>tempat, gantinya berkas yang terpisah-pisah.</span></li>
-            <li class="stat"><strong>6</strong><span>fungsi utama, dari bagan sampai laporan.</span></li>
+            <li class="stat"><strong>6</strong><span>fitur utama, dari bagan sampai riwayat.</span></li>
             <li class="stat"><strong>4</strong><span>peran: Super Admin, Organisasi, BKPSDM, OPD.</span></li>
             <li class="stat"><strong>38</strong><span>halaman admin dengan satu kerangka.</span></li>
           </ul>
@@ -96,54 +95,145 @@
 
       <section class="section">
         <div class="story-screens">
-          <div class="rail">
-            <p class="rail__no">01 / Fungsi</p>
-            <h2 class="rail__title">Enam hal yang diurus.</h2>
+          <div class="story-head">
+            <div class="rail">
+              <p class="rail__no">01 / Masalahnya</p>
+              <h2 class="rail__title">Dulu berserakan, sekarang satu peta.</h2>
+            </div>
+            <p class="story-head__text">Sebelum akupeta, peta jabatan tiap OPD dikerjakan manual dan terpisah. Ini yang berubah.</p>
           </div>
-          <ul class="features">
-            <li class="feature">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="9" y="2" width="6" height="6" rx="1" /><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" /><path d="M12 12V8" /></svg>
-              <div>
-                <h3>Bagan hierarki</h3>
-                <p>Struktur jabatan jadi bagan, siap cetak.</p>
+          <div class="ak-compare">
+            <div class="ak-compare__card">
+              <p class="ak-compare__tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l4 2" /></svg>Sebelum</p>
+              <h3>Excel, Visio, dan tumpukan berkas.</h3>
+              <ul>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></span>Bagan digambar ulang manual setiap kali struktur berubah.</li>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></span>Data pegawai tersebar di berkas masing-masing OPD.</li>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></span>Kebutuhan vs realisasi jabatan dihitung pakai tangan.</li>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></span>Tidak jelas siapa mengubah apa, dan kapan.</li>
+              </ul>
+            </div>
+            <span class="ak-compare__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></span>
+            <div class="ak-compare__card ak-compare__card--after">
+              <p class="ak-compare__tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z" /></svg>Dengan akupeta</p>
+              <h3>Satu sistem, semua OPD.</h3>
+              <ul>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span>Bagan tersusun otomatis dari data jabatan — tinggal cetak.</li>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span>Satu basis data ASN dipakai bersama semua OPD.</li>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span>Bezetting dan kesenjangan terhitung sendiri, real-time.</li>
+                <li><span class="ak-compare__bullet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span>Setiap perubahan tercatat rapi di riwayat aktivitas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="story-screens">
+          <div class="rail">
+            <p class="rail__no">02 / Fitur</p>
+            <h2 class="rail__title">Enam fitur, satu alur kerja.</h2>
+          </div>
+          <div class="ak-features">
+            <article class="ak-feature ak-feature--wide">
+              <div class="ak-visual ak-visual--org" aria-hidden="true">
+                <div class="ak-node ak-node--root"><b>Struktural</b><span>Sekretaris Daerah</span></div>
+                <div class="ak-org__kids">
+                  <div class="ak-node"><b>Struktural</b><span>Asisten Pemerintahan</span></div>
+                  <div class="ak-node"><b>Struktural</b><span>Asisten Perekonomian</span></div>
+                  <div class="ak-node"><b>Struktural</b><span>Asisten Administrasi</span></div>
+                </div>
               </div>
-            </li>
-            <li class="feature">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-              <div>
-                <h3>Data ASN</h3>
-                <p>Pegawai beserta jabatannya.</p>
+              <div class="ak-feature__copy">
+                <span class="ak-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="9" y="2" width="6" height="6" rx="1" /><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" /><path d="M12 12V8" /></svg></span>
+                <div>
+                  <h3>Bagan hierarki otomatis</h3>
+                  <p>Struktur jabatan tersusun jadi bagan dari data — zoom, cetak, atau ekspor PNG dan Excel.</p>
+                </div>
               </div>
-            </li>
-            <li class="feature">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4" /><path d="M4 7h16" /><path d="m16 21 4-4-4-4" /><path d="M20 17H4" /></svg>
-              <div>
-                <h3>Mutasi</h3>
-                <p>Perpindahan antarjabatan.</p>
+            </article>
+            <article class="ak-feature ak-feature--side">
+              <div class="ak-visual" aria-hidden="true">
+                <ul class="ak-bars">
+                  <li class="ak-bar ak-bar--kurang"><span>Analis Kebijakan</span><code>4/6  -2</code><i style="--w: 67%"></i></li>
+                  <li class="ak-bar ak-bar--pas"><span>Pranata Komputer</span><code>4/4  0</code><i style="--w: 100%"></i></li>
+                  <li class="ak-bar ak-bar--kurang"><span>Arsiparis</span><code>2/5  -3</code><i style="--w: 40%"></i></li>
+                  <li class="ak-bar ak-bar--lebih"><span>Pengelola Keuangan</span><code>4/3  +1</code><i style="--w: 100%"></i></li>
+                </ul>
               </div>
-            </li>
-            <li class="feature">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" /><line x1="8" x2="16" y1="6" y2="6" /><line x1="16" x2="16" y1="14" y2="18" /><path d="M16 10h.01" /><path d="M12 10h.01" /><path d="M8 10h.01" /><path d="M12 14h.01" /><path d="M8 14h.01" /><path d="M12 18h.01" /><path d="M8 18h.01" /></svg>
-              <div>
-                <h3>Bezetting</h3>
-                <p>Kebutuhan lawan realisasi.</p>
+              <div class="ak-feature__copy">
+                <span class="ak-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></svg></span>
+                <div>
+                  <h3>Bezetting real-time</h3>
+                  <p>Kebutuhan lawan realisasi per jabatan, langsung terlihat kurang atau lebihnya.</p>
+                </div>
               </div>
-            </li>
-            <li class="feature">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></svg>
-              <div>
-                <h3>Laporan</h3>
-                <p>Termasuk analisis kesenjangan.</p>
+            </article>
+            <article class="ak-feature">
+              <div class="ak-visual" aria-hidden="true">
+                <ul class="ak-people">
+                  <li><span class="ak-avatar">AR</span><div><strong>Andi Rahman</strong><small>Analis Kebijakan</small></div></li>
+                  <li><span class="ak-avatar">SW</span><div><strong>Siti Wulandari</strong><small>Arsiparis</small></div></li>
+                  <li><span class="ak-avatar">BP</span><div><strong>Budi Prasetyo</strong><small>Pranata Komputer</small></div></li>
+                </ul>
               </div>
-            </li>
-            <li class="feature">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l4 2" /></svg>
-              <div>
-                <h3>Riwayat</h3>
-                <p>Log aktivitas dan cadangan data.</p>
+              <div class="ak-feature__copy">
+                <span class="ak-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span>
+                <div>
+                  <h3>Data ASN terpusat</h3>
+                  <p>Pegawai dan jabatannya di satu basis data untuk semua OPD.</p>
+                </div>
               </div>
-            </li>
-          </ul>
+            </article>
+            <article class="ak-feature">
+              <div class="ak-visual ak-visual--center" aria-hidden="true">
+                <div class="ak-move"><small>Jabatan lama</small><strong>Staf Bagian Umum</strong></div>
+                <svg class="ak-move__arrow" viewBox="0 0 24 24"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+                <div class="ak-move ak-move--new"><small>Jabatan baru</small><strong>Analis Kebijakan · Bag. Hukum</strong></div>
+              </div>
+              <div class="ak-feature__copy">
+                <span class="ak-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4" /><path d="M4 7h16" /><path d="m16 21 4-4-4-4" /><path d="M20 17H4" /></svg></span>
+                <div>
+                  <h3>Mutasi tercatat</h3>
+                  <p>Pindah jabatan cukup sekali klik; bagan dan bezetting ikut menyesuaikan.</p>
+                </div>
+              </div>
+            </article>
+            <article class="ak-feature">
+              <div class="ak-visual ak-visual--row" aria-hidden="true">
+                <span class="ak-donut"></span>
+                <ul class="ak-legend">
+                  <li><i style="background: #34c759"></i>Pelaksana</li>
+                  <li><i style="background: #ff9500"></i>Fungsional</li>
+                  <li><i style="background: #0071e3"></i>Struktural</li>
+                </ul>
+              </div>
+              <div class="ak-feature__copy">
+                <span class="ak-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M8 18v-2" /><path d="M12 18v-4" /><path d="M16 18v-6" /></svg></span>
+                <div>
+                  <h3>Laporan &amp; kesenjangan</h3>
+                  <p>Analisis jabatan per jenis dan status, siap dicetak atau diekspor.</p>
+                </div>
+              </div>
+            </article>
+            <article class="ak-feature">
+              <div class="ak-visual" aria-hidden="true">
+                <ul class="ak-log">
+                  <li><i style="background: #0071e3"></i><span>Admin OPD ubah jabatan</span><code>2 mnt</code></li>
+                  <li><i style="background: #34c759"></i><span>Cadangan data berhasil</span><code>1 jam</code></li>
+                  <li><i style="background: #ff9500"></i><span>BKPSDM proses mutasi</span><code>3 jam</code></li>
+                  <li><i style="background: #66666c"></i><span>Struktur Bag. Hukum diubah</span><code>kemarin</code></li>
+                </ul>
+              </div>
+              <div class="ak-feature__copy">
+                <span class="ak-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l4 2" /></svg></span>
+                <div>
+                  <h3>Riwayat &amp; cadangan</h3>
+                  <p>Semua perubahan tercatat — siapa, apa, kapan — plus cadangan data.</p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -154,9 +244,95 @@
       </div>
 
       <section class="section">
+        <div class="ak-roles">
+          <div class="rail">
+            <p class="rail__no">03 / Pengguna</p>
+            <h2 class="rail__title">Empat peran, satu data.</h2>
+            <p class="rail__desc">Hak akses dibagi menurut peran, jadi setiap orang cuma melihat dan mengubah data yang jadi tanggung jawabnya.</p>
+          </div>
+          <ul class="ak-roles__list">
+            <li class="ak-role ak-role--lead">
+              <span class="ak-icon ak-icon--lg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span>
+              <div class="ak-role__copy">
+                <h3>Super Admin</h3>
+                <p>Mengelola akun pengguna, cadangan basis data, dan riwayat aktivitas.</p>
+              </div>
+              <p class="ak-role__tags"><span>Akun</span><span>Backup</span><span>Log</span></p>
+            </li>
+            <li class="ak-role">
+              <span class="ak-icon ak-icon--lg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /><path d="M10 6h4" /><path d="M10 10h4" /><path d="M10 14h4" /><path d="M10 18h4" /></svg></span>
+              <div class="ak-role__copy">
+                <h3>Admin Organisasi</h3>
+                <p>Menyusun struktur dan kelas jabatan lintas OPD.</p>
+              </div>
+              <p class="ak-role__tags"><span>Struktur</span><span>Kelas jabatan</span></p>
+            </li>
+            <li class="ak-role">
+              <span class="ak-icon ak-icon--lg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span>
+              <div class="ak-role__copy">
+                <h3>Admin BKPSDM</h3>
+                <p>Mengelola data ASN dan memproses mutasi pegawai.</p>
+              </div>
+              <p class="ak-role__tags"><span>Data ASN</span><span>Mutasi</span></p>
+            </li>
+            <li class="ak-role">
+              <span class="ak-icon ak-icon--lg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="10" r="3" /><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" /></svg></span>
+              <div class="ak-role__copy">
+                <h3>Admin OPD</h3>
+                <p>Mengurus jabatan dan pegawai di instansinya sendiri.</p>
+              </div>
+              <p class="ak-role__tags"><span>Jabatan</span><span>Pegawai</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section ak-benefits-wrap">
+        <div class="ak-benefits">
+          <div class="ak-benefits__head">
+            <div class="rail">
+              <p class="rail__no">04 / Manfaat</p>
+              <h2 class="rail__title">Yang didapat OPD dan BKPSDM.</h2>
+            </div>
+            <p class="ak-benefits__sub">Bukan sekadar bagan yang lebih rapi — pekerjaan administrasi kepegawaian jadi lebih cepat, akurat, dan bisa dipertanggungjawabkan.</p>
+          </div>
+          <ul class="ak-benefits__grid">
+            <li class="ak-benefit">
+              <span class="ak-benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2" /><line x1="12" x2="15" y1="14" y2="11" /><circle cx="12" cy="14" r="8" /></svg></span>
+              <div>
+                <h3>Hemat waktu</h3>
+                <p>Tidak perlu lagi menggambar ulang bagan tiap kali struktur berubah. Ubah data sekali, semuanya ikut.</p>
+              </div>
+            </li>
+            <li class="ak-benefit">
+              <span class="ak-benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14a9 3 0 0 0 18 0V5" /><path d="M3 12a9 3 0 0 0 18 0" /></svg></span>
+              <div>
+                <h3>Data selalu sinkron</h3>
+                <p>Satu sumber data untuk semua OPD, jadi tidak ada lagi versi berkas yang saling bertentangan.</p>
+              </div>
+            </li>
+            <li class="ak-benefit">
+              <span class="ak-benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
+              <div>
+                <h3>Formasi lebih tepat</h3>
+                <p>Kekurangan dan kelebihan pegawai per jabatan langsung terlihat — dasar yang jelas untuk usulan formasi.</p>
+              </div>
+            </li>
+            <li class="ak-benefit">
+              <span class="ak-benefit__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span>
+              <div>
+                <h3>Akuntabel &amp; aman</h3>
+                <p>Akses sesuai peran, setiap perubahan tercatat, dan data dicadangkan secara berkala.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="story-screens">
           <div class="rail">
-            <p class="rail__no">02 / Desain</p>
+            <p class="rail__no">05 / Desain</p>
             <h2 class="rail__title">Tenang, padat, satu aksen biru.</h2>
           </div>
           <div class="design-row">

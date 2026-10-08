@@ -30,6 +30,10 @@
     ".cv-head > *",
     ".cv-kontak > div",
     ".kontak__inner > *",
+    ".ak-compare__card",
+    ".ak-feature",
+    ".ak-role",
+    ".ak-benefit",
   ].join(",");
 
   const init = () => {

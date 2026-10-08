@@ -150,6 +150,10 @@
   animation: float 5s ease-in-out infinite;
 }
 
+.motion .obengku__card {
+  animation: float 5s ease-in-out infinite;
+}
+
 .motion .mamakana__short--b {
   animation-delay: -2.5s;
 }
