@@ -499,6 +499,20 @@ img {
   box-shadow: 0 12px 32px #16161a26;
 }
 
+@media (min-width: 1201px) {
+  .content .obengku__home {
+    width: 640px;
+    height: 400px;
+  }
+
+  .content .obengku__card {
+    left: 330px;
+    top: 190px;
+    width: 200px;
+    height: 265px;
+  }
+}
+
 /* Playin' tiles */
 
 .tiles {
