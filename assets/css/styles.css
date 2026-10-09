@@ -18,6 +18,36 @@
   --serif: Fraunces, Georgia, serif;
 
   --gutter: 80px;
+
+  /* Oversized arrow with soft rounded corners: ink by default, coral on
+     anything clickable. Falls back to the system cursor. */
+  --cursor-default:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M6 4v21.5l5.6-5.2 3.9 8.6 4-1.8-3.8-8.4 7.8-.4z' fill='%2316161a' stroke='%23fff' stroke-width='2.5' stroke-linejoin='round' paint-order='stroke'/%3E%3C/svg%3E")
+      6 4,
+    default;
+  --cursor-pointer:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M6 4v21.5l5.6-5.2 3.9 8.6 4-1.8-3.8-8.4 7.8-.4z' fill='%23ff6b5c' stroke='%2316161a' stroke-width='2.5' stroke-linejoin='round' paint-order='stroke'/%3E%3C/svg%3E")
+      6 4,
+    pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    cursor: var(--cursor-default);
+  }
+
+  a,
+  button,
+  label,
+  summary,
+  [role="button"] {
+    cursor: var(--cursor-pointer);
+  }
+
+  input:not([type="checkbox"], [type="radio"]),
+  textarea {
+    cursor: text;
+  }
 }
 
 *,
@@ -1736,7 +1766,7 @@ img {
   font: inherit;
   font-size: 19px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .print-button:hover {
@@ -2318,7 +2348,7 @@ img {
 
 .choice {
   position: relative;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .choice input {
@@ -2363,7 +2393,7 @@ img {
   font: inherit;
   font-size: 18px;
   font-weight: 600;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .colek-form__submit:hover {

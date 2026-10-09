@@ -45,7 +45,6 @@
       pointerParallax();
       tilt();
       magnetic();
-      yarnCursor();
     }
   };
 
@@ -238,117 +237,6 @@
         el.style.translate = "";
       });
     }
-  }
-
-  /* The brand's yarn ball rolls after the cursor on a spring and leaves a
-     thread behind it. */
-  function yarnCursor() {
-    const icon = document.querySelector(".brand__icon");
-    if (!icon) return;
-
-    const canvas = document.createElement("canvas");
-    canvas.className = "yarn-canvas";
-    canvas.setAttribute("aria-hidden", "true");
-    const ball = document.createElement("div");
-    ball.className = "yarn-ball";
-    ball.setAttribute("aria-hidden", "true");
-    const svg = icon.cloneNode(true);
-    svg.removeAttribute("class");
-    ball.append(svg);
-    document.body.append(canvas, ball);
-
-    const ctx = canvas.getContext("2d");
-    const TRAIL_MS = 650;
-    const OFFSET = 20;
-    const RADIUS = 13;
-    let dpr = 1;
-    const resize = () => {
-      dpr = Math.min(devicePixelRatio || 1, 2);
-      canvas.width = innerWidth * dpr;
-      canvas.height = innerHeight * dpr;
-    };
-    resize();
-    addEventListener("resize", resize);
-
-    const target = { x: 0, y: 0 };
-    const pos = { x: 0, y: 0 };
-    const vel = { x: 0, y: 0 };
-    let angle = 0;
-    let trail = [];
-    let last = 0;
-    let running = false;
-    let started = false;
-
-    const frame = (now) => {
-      const dt = Math.min((now - last) / 1000, 1 / 30);
-      last = now;
-
-      vel.x += ((target.x - pos.x) * 160 - vel.x * 16) * dt;
-      vel.y += ((target.y - pos.y) * 160 - vel.y * 16) * dt;
-      const dx = vel.x * dt;
-      const dy = vel.y * dt;
-      pos.x += dx;
-      pos.y += dy;
-      angle += dx / RADIUS;
-
-      ball.style.transform = `translate(${pos.x.toFixed(1)}px, ${pos.y.toFixed(1)}px) rotate(${angle.toFixed(3)}rad)`;
-
-      const tip = trail[trail.length - 1];
-      if (!tip || Math.hypot(pos.x - tip.x, pos.y - tip.y) > 2) {
-        trail.push({ x: pos.x, y: pos.y, t: now });
-      }
-      trail = trail.filter((p) => now - p.t < TRAIL_MS);
-
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, innerWidth, innerHeight);
-      ctx.lineCap = "round";
-      for (let i = 1; i < trail.length - 1; i++) {
-        const a = trail[i - 1];
-        const b = trail[i];
-        const c = trail[i + 1];
-        const life = 1 - (now - b.t) / TRAIL_MS;
-        ctx.strokeStyle = `rgba(255, 96, 83, ${life.toFixed(3)})`;
-        ctx.lineWidth = 0.6 + life * 2;
-        ctx.beginPath();
-        ctx.moveTo((a.x + b.x) / 2, (a.y + b.y) / 2);
-        ctx.quadraticCurveTo(b.x, b.y, (b.x + c.x) / 2, (b.y + c.y) / 2);
-        ctx.stroke();
-      }
-
-      const settled =
-        Math.hypot(vel.x, vel.y) < 2 && Math.hypot(target.x - pos.x, target.y - pos.y) < 0.5;
-      running = !(settled && trail.length < 2);
-      if (running) requestAnimationFrame(frame);
-      else ctx.clearRect(0, 0, innerWidth, innerHeight);
-    };
-
-    const wake = () => {
-      if (running) return;
-      running = true;
-      last = performance.now();
-      requestAnimationFrame(frame);
-    };
-
-    addEventListener(
-      "pointermove",
-      (e) => {
-        if (e.pointerType !== "mouse") return;
-        target.x = e.clientX + OFFSET;
-        target.y = e.clientY + OFFSET;
-        if (!started) {
-          started = true;
-          pos.x = target.x;
-          pos.y = target.y;
-        }
-        ball.classList.add("is-on");
-        ball.classList.toggle("is-hover", !!e.target.closest?.("a, button"));
-        wake();
-      },
-      { passive: true },
-    );
-    addEventListener("pointerdown", () => ball.classList.add("is-down"));
-    addEventListener("pointerup", () => ball.classList.remove("is-down"));
-    root.addEventListener("pointerleave", () => ball.classList.remove("is-on"));
   }
 
   if (document.readyState === "loading") {

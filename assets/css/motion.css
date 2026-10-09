@@ -50,7 +50,7 @@
   }
 }
 
-/* Scroll thread + yarn cursor */
+/* Scroll thread */
 
 .scroll-thread {
   position: fixed;
@@ -63,46 +63,6 @@
   transform: scaleX(var(--progress, 0));
   transform-origin: left;
   pointer-events: none;
-}
-
-.yarn-canvas {
-  position: fixed;
-  z-index: 998;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.yarn-ball {
-  position: fixed;
-  z-index: 999;
-  top: -13px;
-  left: -13px;
-  width: 26px;
-  height: 26px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.yarn-ball.is-on {
-  opacity: 1;
-}
-
-.yarn-ball svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  transition: scale 0.5s var(--spring);
-}
-
-.yarn-ball.is-hover svg {
-  scale: 1.5;
-}
-
-.yarn-ball.is-down svg {
-  scale: 0.75;
 }
 
 /* Scroll reveals */
@@ -551,9 +511,7 @@
 }
 
 @media print {
-  .scroll-thread,
-  .yarn-canvas,
-  .yarn-ball {
+  .scroll-thread {
     display: none;
   }
 
