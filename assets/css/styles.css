@@ -100,20 +100,107 @@ img {
   display: block;
 }
 
-/* Header */
+/* Header: a full-width bar at the top of the page that turns into a floating
+   glass island once you scroll. On desktop the island shrinks to the logo and
+   opens up on hover; on mobile the links move into a dropdown.
+
+   The island animates between pixel widths. header.js measures the logo, the
+   links and the CTA (--brand-w, --links-w, --talk-w); the widths below are
+   built from those plus the spacing of the current state, so every
+   transition already knows where it ends. */
 
 .header {
+  --isle-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --isle-spring: var(--isle-smooth);
+  --isle-ease: var(--isle-smooth);
+  --isle-dur: 0.6s;
+  --pad-l: var(--gutter);
+  --pad-r: var(--gutter);
+  --nav-gap: 32px;
+  --chrome-gap: 32px;
+  --chrome-w: calc(
+    var(--chrome-gap) * 2 + var(--links-w, 420px) + var(--nav-gap) * var(--link-gaps, 4) +
+      var(--talk-w, 150px) + 2px
+  );
+  position: relative;
+  z-index: 800;
+  height: var(--header-h, 89px);
+}
+
+@supports (transition-timing-function: linear(0, 1)) {
+  .header {
+    /* Critically damped: settles without overshooting. */
+    --isle-smooth: linear(
+      0, 0.045, 0.144, 0.264, 0.385, 0.496, 0.594, 0.677, 0.745, 0.801, 0.845, 0.881, 0.908,
+      0.93, 0.947, 0.96, 0.969, 0.977, 0.983, 0.987, 0.99, 0.993, 0.995, 0.996, 1
+    );
+    /* Underdamped: overshoots by about 4% before it settles. */
+    --isle-spring: linear(
+      0, 0.026, 0.091, 0.181, 0.284, 0.392, 0.498, 0.597, 0.687, 0.765, 0.832, 0.888, 0.933,
+      0.968, 0.994, 1.013, 1.026, 1.034, 1.037, 1.038, 1.037, 1.035, 1.031, 1.027, 1.023, 1.019,
+      1.015, 1.012, 1.009, 1.006, 1.004, 1.002, 1
+    );
+  }
+}
+
+.header.is-floating {
+  --pad-l: 16px;
+  --pad-r: 10px;
+  --nav-gap: 22px;
+  --chrome-gap: 24px;
+}
+
+.header__isle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  width: 100%;
   max-width: 1440px;
+  height: var(--header-h, 89px);
   margin: 0 auto;
-  padding: 24px var(--gutter);
+  padding: 0 var(--pad-r) 0 var(--pad-l);
+  border-radius: 999px;
+  transition-property: top, width, max-width, height, padding;
+  transition-duration: var(--isle-dur);
+  transition-timing-function: var(--isle-ease);
+}
+
+.header__isle::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid rgb(22 22 26 / 8%);
+  border-radius: inherit;
+  background: rgb(255 255 255 / 86%);
+  box-shadow:
+    0 14px 36px -14px rgb(22 22 26 / 22%),
+    inset 0 1px rgb(255 255 255 / 90%);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  backdrop-filter: blur(18px) saturate(1.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.header.is-floating .header__isle {
+  top: 12px;
+  width: calc(100% - 24px);
+  max-width: calc(var(--pad-l) + var(--brand-w, 150px) + var(--chrome-w) + var(--pad-r));
+  height: 60px;
+}
+
+.header.is-floating .header__isle::before {
+  opacity: 1;
+  transition-duration: 0.3s;
 }
 
 .brand {
   display: flex;
+  flex: none;
   align-items: center;
   gap: 8px;
 }
@@ -128,12 +215,38 @@ img {
   letter-spacing: -0.8px;
 }
 
+.header__chrome {
+  display: flex;
+  flex: none;
+  margin-left: auto;
+  max-width: var(--chrome-w);
+  overflow: hidden;
+  transition:
+    max-width var(--isle-dur) var(--isle-ease),
+    opacity 0.3s cubic-bezier(0.2, 0, 0, 1),
+    filter 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.header__chrome-inner {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--chrome-gap);
+  padding-left: var(--chrome-gap);
+  transition:
+    gap var(--isle-dur) var(--isle-ease),
+    padding var(--isle-dur) var(--isle-ease),
+    translate var(--isle-dur) var(--isle-ease);
+}
+
 .nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: var(--nav-gap);
   font-size: 17px;
   font-weight: 500;
+  white-space: nowrap;
+  transition: gap var(--isle-dur) var(--isle-ease);
 }
 
 .talk {
@@ -157,6 +270,185 @@ img {
 
 .nav a[aria-current="page"] {
   color: var(--coral-text);
+}
+
+.header__toggle {
+  display: none;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--ink);
+  cursor: inherit;
+}
+
+.header__toggle:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.header__toggle svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.header__toggle path {
+  transform-origin: 12px 12px;
+  transition: transform 0.4s var(--isle-smooth);
+}
+
+.header.is-open .header__toggle-top {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.header.is-open .header__toggle-bottom {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Desktop island: only the logo shows until you hover or tab into it. Opening
+   springs a little; closing settles without a bounce, so the pill never dips
+   under the logo. */
+@media (min-width: 861px) {
+  .header.is-floating.is-expanded {
+    --isle-ease: var(--isle-spring);
+  }
+
+  .header.is-floating:not(.is-expanded) {
+    --pad-r: 20px;
+  }
+
+  .header.is-floating:not(.is-expanded) .header__isle {
+    max-width: calc(var(--pad-l) + var(--brand-w, 150px) + var(--pad-r));
+  }
+
+  .header.is-floating:not(.is-expanded) .header__chrome {
+    max-width: 0;
+    opacity: 0;
+    filter: blur(10px);
+    pointer-events: none;
+    transition:
+      max-width var(--isle-dur) var(--isle-ease),
+      opacity 0.18s ease-out,
+      filter 0.25s ease-out;
+  }
+
+  .header.is-floating:not(.is-expanded) .header__chrome-inner {
+    translate: -20px 0;
+  }
+}
+
+/* Mobile: logo, CTA and a menu button; the links drop down in a panel. */
+@media (max-width: 860px) {
+  .header {
+    --header-h: 76px;
+  }
+
+  .header.is-floating {
+    --pad-l: 16px;
+    --pad-r: 6px;
+  }
+
+  .header.is-floating .header__isle {
+    max-width: none;
+  }
+
+  .header__chrome {
+    max-width: none;
+    overflow: visible;
+  }
+
+  .header__chrome-inner {
+    gap: 4px;
+    padding-left: 12px;
+  }
+
+  .talk {
+    padding: 8px 14px 8px 16px;
+    font-size: 15px;
+  }
+
+  .header__toggle {
+    display: grid;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    min-width: 220px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--bg);
+    box-shadow: 0 18px 50px -12px rgb(22 22 26 / 22%);
+    transform-origin: 100% 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.96);
+    filter: blur(4px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.3s var(--isle-smooth),
+      filter 0.2s ease,
+      visibility 0s linear 0.3s;
+  }
+
+  .header.is-floating .nav {
+    right: 0;
+  }
+
+  .header.is-open .nav {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    filter: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.45s var(--isle-spring),
+      filter 0.25s ease;
+  }
+
+  .header .header__chrome .nav a {
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: none;
+  }
+
+  .header .header__chrome .nav a:hover {
+    background: var(--surface);
+  }
+}
+
+@media (max-width: 380px) {
+  .brand__wordmark {
+    font-size: 21px;
+  }
+
+  .talk svg {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__isle,
+  .header__isle::before,
+  .header__chrome,
+  .header__chrome-inner,
+  .nav,
+  .header__toggle path {
+    transition: none !important;
+  }
 }
 
 /* Hero */
@@ -1060,21 +1352,6 @@ img {
 }
 
 @media (max-width: 860px) {
-  .header {
-    flex-wrap: wrap;
-    row-gap: 16px;
-  }
-
-  .nav {
-    order: 3;
-    width: 100%;
-    gap: 16px;
-    font-size: 14px;
-    padding-bottom: 4px;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
   .panel,
   .panel--wide-copy {
     flex-direction: column;
