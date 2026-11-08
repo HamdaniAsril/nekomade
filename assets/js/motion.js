@@ -4,6 +4,25 @@
   const root = document.documentElement;
   root.classList.add("motion");
 
+  /* The header island is its own view-transition group, but only while a page
+     change runs: a named element is a backdrop root, and the island's glass
+     (header.js) has to see the page behind it the rest of the time. */
+  const nameIsle = (on) => {
+    const isle = document.querySelector(".header__isle");
+    if (isle) isle.style.viewTransitionName = on ? "header" : "";
+  };
+  addEventListener("pageswap", (e) => {
+    if (e.viewTransition) nameIsle(true);
+  });
+  addEventListener("pagereveal", (e) => {
+    if (!e.viewTransition) return;
+    nameIsle(true);
+    e.viewTransition.finished.finally(() => nameIsle(false));
+  });
+  addEventListener("pageshow", (e) => {
+    if (e.persisted) nameIsle(false);
+  });
+
   const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
   const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;

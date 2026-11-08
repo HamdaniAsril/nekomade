@@ -23,9 +23,8 @@
     navigation: auto;
   }
 
-  .header__isle {
-    view-transition-name: header;
-  }
+  /* motion.js names the header island "header" only while a page change
+     runs (a named element is a backdrop root, which would blind its glass). */
 
   /* The header can be a bar on one page and the floating island on the next.
      Both are centred near the top, so cross-fade them where they stand instead
