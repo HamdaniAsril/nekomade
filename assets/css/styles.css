@@ -5913,6 +5913,29 @@ img {
   object-fit: cover;
 }
 
+/* Compact Truescale panel for Home: sized like Home's Sopku panel */
+
+.panel__visual--truescale-compact .sopku-win img {
+  object-fit: cover;
+  object-position: left top;
+}
+
+.panel__visual--truescale-compact .ts-phone {
+  top: 168px;
+  left: 372px;
+  width: 140px;
+  height: 300px;
+  border-width: 5px;
+  border-radius: 22px;
+}
+
+.panel__visual--truescale-compact .ts-phone img {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .story-cta {
   display: flex;
   flex-wrap: wrap;
