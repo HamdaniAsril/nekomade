@@ -720,6 +720,47 @@ img {
   }
 }
 
+/* Notching: notch is centred, so the stage scales with the panel instead of bleeding */
+
+.notching__stage {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: min(720px, 100% - 24px);
+  aspect-ratio: 16 / 10;
+}
+
+.panel__visual .notching__home {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+}
+
+.panel__visual .notching__card {
+  top: 64%;
+  left: 56%;
+  width: 42%;
+  height: auto;
+  aspect-ratio: 640 / 300;
+  border-radius: 14px;
+  outline: 4px solid #fff;
+  box-shadow: 0 12px 32px #16161a26;
+}
+
+@media (max-width: 860px) {
+  .panel .panel__visual--notching {
+    height: auto;
+    padding-bottom: 32px;
+  }
+
+  .notching__stage {
+    position: relative;
+    top: 0;
+    width: min(560px, 100% - 24px);
+  }
+}
+
 /* Playin' tiles */
 
 .tiles {

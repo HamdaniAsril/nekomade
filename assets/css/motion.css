@@ -110,7 +110,8 @@
   animation: float 5s ease-in-out infinite;
 }
 
-.motion .obengku__card {
+.motion .obengku__card,
+.motion .notching__card {
   animation: float 5s ease-in-out infinite;
 }
 
