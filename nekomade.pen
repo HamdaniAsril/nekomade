@@ -2580,7 +2580,7 @@
                   "id": "YSooU",
                   "name": "Head No",
                   "fill": "$gray",
-                  "content": "Arsip / 4 barang",
+                  "content": "Arsip / 5 barang",
                   "fontFamily": "$mono",
                   "fontSize": 15,
                   "fontWeight": "normal",
@@ -2697,7 +2697,7 @@
                       "id": "wSE6B",
                       "name": "Chip Count",
                       "fill": "$bg",
-                      "content": "04",
+                      "content": "05",
                       "fontFamily": "$mono",
                       "fontSize": 14,
                       "fontWeight": "normal",
@@ -2733,7 +2733,7 @@
                       "id": "RwYk2",
                       "name": "Chip Count",
                       "fill": "$ink",
-                      "content": "01",
+                      "content": "02",
                       "fontFamily": "$mono",
                       "fontSize": 14,
                       "fontWeight": "normal",
@@ -2857,7 +2857,7 @@
                       "id": "ihuDC",
                       "name": "Rail No",
                       "fill": "$gray",
-                      "content": "2026 / 4 barang",
+                      "content": "2026 / 5 barang",
                       "fontFamily": "$mono",
                       "fontSize": 15,
                       "fontWeight": "normal",
@@ -2995,6 +2995,103 @@
                     },
                     {
                       "type": "frame",
+                      "id": "z2acu",
+                      "name": "Work Row Truescale",
+                      "width": "fill_container",
+                      "stroke": "$line",
+                      "gap": 24,
+                      "padding": [
+                        24,
+                        0
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qB1DE",
+                          "name": "Row No",
+                          "width": 44,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YmnAZ",
+                              "name": "No",
+                              "fill": "$gray",
+                              "content": "02",
+                              "fontFamily": "$mono",
+                              "fontSize": 15,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "PUvzR",
+                          "name": "Row Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": 280,
+                          "content": "Truescale",
+                          "fontFamily": "$font",
+                          "fontSize": 32,
+                          "fontWeight": "500",
+                          "letterSpacing": -0.8
+                        },
+                        {
+                          "type": "text",
+                          "id": "XRYOb",
+                          "name": "Row Desc",
+                          "fill": "$gray",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Wallpaper penggaris berskala asli, 1 cm = 1 cm.",
+                          "lineHeight": 1.55,
+                          "fontFamily": "$font",
+                          "fontSize": 17,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "c5YZyr",
+                          "name": "Row Status",
+                          "fill": "$mint",
+                          "cornerRadius": 999,
+                          "padding": [
+                            2,
+                            14,
+                            5,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YcVo9",
+                              "name": "Status Serif",
+                              "fill": "$ink",
+                              "content": "Chillin’",
+                              "fontFamily": "$serif",
+                              "fontSize": 22,
+                              "fontWeight": "normal",
+                              "letterSpacing": -0.4,
+                              "fontStyle": "italic"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "GjssW",
+                          "name": "Row Arrow",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "arrow-up-right",
+                          "library": "lucide",
+                          "fill": "$ink"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
                       "id": "r07Zm",
                       "name": "Work Row Revamp SIMPEG",
                       "width": "fill_container",
@@ -3020,7 +3117,7 @@
                               "id": "eelBg",
                               "name": "No",
                               "fill": "$gray",
-                              "content": "02",
+                              "content": "03",
                               "fontFamily": "$mono",
                               "fontSize": 15,
                               "fontWeight": "normal",
@@ -3120,7 +3217,7 @@
                               "id": "MdzRe",
                               "name": "No",
                               "fill": "$gray",
-                              "content": "03",
+                              "content": "04",
                               "fontFamily": "$mono",
                               "fontSize": 15,
                               "fontWeight": "normal",
@@ -3220,7 +3317,7 @@
                               "id": "w5mxIl",
                               "name": "No",
                               "fill": "$gray",
-                              "content": "04",
+                              "content": "05",
                               "fontFamily": "$mono",
                               "fontSize": 15,
                               "fontWeight": "normal",
@@ -3780,7 +3877,7 @@
                   "id": "G3zYzw",
                   "name": "Head No",
                   "fill": "$gray",
-                  "content": "01 / 2 barang",
+                  "content": "01 / 3 barang",
                   "fontFamily": "$mono",
                   "fontSize": 15,
                   "fontWeight": "normal",
@@ -4352,6 +4449,286 @@
                 },
                 {
                   "type": "frame",
+                  "id": "TFLqR",
+                  "name": "Truescale Panel",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 560,
+                  "fill": "$surface",
+                  "cornerRadius": 24,
+                  "gap": 40,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    48
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "b7MHZF",
+                      "name": "Truescale Copy",
+                      "width": 320,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xjMN2",
+                          "name": "Truescale Tag",
+                          "fill": "$coral-text",
+                          "content": "✓ Nº 03 · Web app",
+                          "fontFamily": "$mono",
+                          "fontSize": 15,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EPaRk",
+                          "name": "Truescale Title",
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zxt9i",
+                              "name": "Title Line",
+                              "fill": "$ink",
+                              "content": "1 cm = 1 cm,",
+                              "lineHeight": 1,
+                              "fontFamily": "$font",
+                              "fontSize": 56,
+                              "fontWeight": "500",
+                              "letterSpacing": -1.8
+                            },
+                            {
+                              "type": "text",
+                              "id": "aEFAM",
+                              "name": "Title Serif",
+                              "fill": "$coral-text",
+                              "content": "truescale.",
+                              "lineHeight": 1.05,
+                              "fontFamily": "$serif",
+                              "fontSize": 56,
+                              "fontWeight": "normal",
+                              "letterSpacing": -1.2,
+                              "fontStyle": "italic"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "o1AZt1",
+                          "name": "Truescale Desc",
+                          "fill": "$gray",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Wallpaper penggaris berskala asli: pilih perangkat, atur gaya dan warnanya, unduh PNG — penggarisnya beneran pas di layar.",
+                          "lineHeight": 1.55,
+                          "fontFamily": "$font",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "u9fsF",
+                          "name": "Truescale Note",
+                          "fill": "$gray",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "2026 — Web app tanpa server, semua diproses di browser. Mac, Windows, dan monitor eksternal.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "$mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "axO0M",
+                          "name": "Truescale Actions",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "mlbLQ",
+                              "name": "Truescale Button",
+                              "fill": "$ink",
+                              "cornerRadius": 999,
+                              "gap": 8,
+                              "padding": [
+                                10,
+                                16,
+                                10,
+                                18
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ZJpGy",
+                                  "name": "Button Label",
+                                  "fill": "$bg",
+                                  "content": "Buka Truescale",
+                                  "fontFamily": "$font",
+                                  "fontSize": 16,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "r4gcn",
+                                  "name": "Button Icon",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "arrow-up-right",
+                                  "library": "lucide",
+                                  "fill": "$bg"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "K8gmj",
+                              "name": "Truescale Link",
+                              "fill": "$ink",
+                              "content": "Lihat proyeknya →",
+                              "fontFamily": "$font",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Nw4Bq",
+                      "name": "Truescale Visual",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "RKF5g",
+                          "x": 40,
+                          "y": 43,
+                          "name": "Truescale Window",
+                          "clip": true,
+                          "width": 680,
+                          "height": 474,
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 14,
+                          "stroke": "#0000001F",
+                          "strokeWidth": 1,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#0000001A",
+                            "offset": {
+                              "x": 0,
+                              "y": 12
+                            },
+                            "blur": 32
+                          },
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "PKfPq",
+                              "name": "Title Bar",
+                              "width": "fill_container",
+                              "height": 30,
+                              "fill": "#F6F6F8",
+                              "stroke": "#0000001A",
+                              "strokeWidth": {
+                                "bottom": 1
+                              },
+                              "gap": 8,
+                              "padding": [
+                                0,
+                                12
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "ellipse",
+                                  "id": "ZAgUh",
+                                  "name": "Close",
+                                  "fill": "#FF5F57",
+                                  "width": 12,
+                                  "height": 12
+                                },
+                                {
+                                  "type": "ellipse",
+                                  "id": "MRk5n",
+                                  "name": "Minimize",
+                                  "fill": "#FEBC2E",
+                                  "width": 12,
+                                  "height": 12
+                                },
+                                {
+                                  "type": "ellipse",
+                                  "id": "qlQyd",
+                                  "name": "Zoom",
+                                  "fill": "#28C840",
+                                  "width": 12,
+                                  "height": 12
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "nDu5H",
+                              "name": "Screen",
+                              "width": "fill_container",
+                              "height": "fill_container",
+                              "fill": {
+                                "type": "image",
+                                "enabled": true,
+                                "url": "assets/img/works/truescale/truescale-desktop.png",
+                                "mode": "cover"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "dV2e6",
+                          "x": 636,
+                          "y": 96,
+                          "name": "Truescale Phone",
+                          "clip": true,
+                          "width": 196,
+                          "height": 425,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "assets/img/works/truescale/truescale-mobile.png",
+                            "mode": "cover"
+                          },
+                          "cornerRadius": 28,
+                          "stroke": "#1E1C19",
+                          "strokeWidth": 6,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#00000030",
+                            "offset": {
+                              "x": 0,
+                              "y": 16
+                            },
+                            "blur": 40
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
                   "id": "Q7UXRj",
                   "name": "Empty Slot",
                   "width": "fill_container",
@@ -4382,7 +4759,7 @@
                           "id": "i2Tau",
                           "name": "No",
                           "fill": "$ink",
-                          "content": "03",
+                          "content": "04",
                           "fontFamily": "$mono",
                           "fontSize": 14,
                           "fontWeight": "normal",
@@ -40975,6 +41352,1241 @@
                 {
                   "type": "text",
                   "id": "jXnb4",
+                  "name": "Footer Right",
+                  "fill": "$ink",
+                  "content": "Nekonya mager lagi  ·  ↑ Balik ke atas",
+                  "fontFamily": "$mono",
+                  "fontSize": 15,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "PkPle",
+      "x": 11200,
+      "y": 10780,
+      "name": "Truescale — Desktop (Clean)",
+      "theme": {
+        "look": "bersih"
+      },
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DPGf2",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            24,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "GSWtj",
+              "name": "Brand",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nDo9z",
+                  "name": "Yarn Icon",
+                  "clip": true,
+                  "width": 26,
+                  "height": 26,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "V5odt",
+                      "x": 19.2335,
+                      "y": 18.6127,
+                      "name": "Yarn Thread",
+                      "geometry": "M1.014 0c1.4105 0.41275 1.90775 1.365 2.1775 2.59025 0.1625 0.741 0.75075 1.12125 1.38125 1.0205 0.39325-0.0585 0.7475 0.1755 0.78 0.55575 0.02925 0.36075-0.273 0.63375-0.715 0.6825-1.0985 0.12675-2.2945-0.49075-2.652-2.10275-0.26325-1.18625-0.767-1.64125-1.98575-1.66075l1.014-1.0855z",
+                      "fill": "#C6312A",
+                      "width": 5.3547,
+                      "height": 4.865
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "M1FSR",
+                      "x": 3.0332,
+                      "y": 2.7082,
+                      "name": "Yarn Ball",
+                      "fill": "#FF6053",
+                      "width": 19.4859,
+                      "height": 19.4859
+                    },
+                    {
+                      "type": "path",
+                      "id": "NrwXm",
+                      "x": 3.3962,
+                      "y": 2.951,
+                      "name": "Yarn Thread",
+                      "geometry": "M12.19075 0c-1.89475 2.431-7.124 5.19675-11.5375 5.19675-0.2925 0.572-0.51675 1.1765-0.65325 1.781 5.43725 0.31525 11.7195-3.28575 14.0985-6.1555-0.6045-0.351-1.248-0.624-1.90775-0.82225z",
+                      "fill": "#C6312A",
+                      "width": 14.0985,
+                      "height": 6.9971
+                    },
+                    {
+                      "type": "path",
+                      "id": "mUikJ",
+                      "x": 3.0517,
+                      "y": 6.1717,
+                      "name": "Yarn Thread",
+                      "geometry": "M17.18275 0c-3.07125 4.446-11.2905 7.371-17.18275 6.62675 0.013 0.637 0.0845 1.24475 0.221 1.7875 5.967 0.6565 14.118-2.15475 18.109-6.66575-0.3315-0.6565-0.71825-1.2415-1.14725-1.7485z",
+                      "fill": "#C6312A",
+                      "width": 18.33,
+                      "height": 8.509
+                    },
+                    {
+                      "type": "path",
+                      "id": "MBsPQ",
+                      "x": 4.1177,
+                      "y": 11.3685,
+                      "name": "Yarn Thread",
+                      "geometry": "M18.32675 0c-4.29975 4.54025-12.0965 6.93225-18.32675 5.473 0.34775 0.72475 0.82875 1.40075 1.3195 1.95975 6.12625 0.86125 12.792-1.42675 17.004-5.03425 0.08775-0.793 0.091-1.625 0.00325-2.3985z",
+                      "fill": "#C6312A",
+                      "width": 18.391,
+                      "height": 7.6144
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "JYIB2",
+                  "name": "Wordmark",
+                  "fill": "$ink",
+                  "content": "nekomade",
+                  "fontFamily": "$font",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                  "letterSpacing": -0.8
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GiD0v",
+              "name": "Nav",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "C1Z6z",
+                  "name": "Nav Works",
+                  "fill": "$ink",
+                  "content": "Works",
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "UwHCb",
+                  "name": "Nav Chillin’",
+                  "fill": "$coral-text",
+                  "content": "Chillin’",
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "zQCgi",
+                  "name": "Nav Pokin’",
+                  "fill": "$ink",
+                  "content": "Pokin’",
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "PKMe1",
+                  "name": "Nav Tinkerin’",
+                  "fill": "$ink",
+                  "content": "Tinkerin’",
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "mKh2t",
+                  "name": "Nav Tentang",
+                  "fill": "$ink",
+                  "content": "About",
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "as8U3",
+              "name": "Talk Button",
+              "fill": "$ink",
+              "cornerRadius": 999,
+              "stroke": "$line",
+              "gap": 8,
+              "padding": [
+                10,
+                16,
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dyQYw",
+                  "name": "Talk Label",
+                  "fill": "$bg",
+                  "content": "Colek neko",
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon",
+                  "id": "CPQJC",
+                  "name": "Talk Arrow",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "arrow-right",
+                  "library": "lucide",
+                  "fill": "$bg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SdOHO",
+          "name": "Page Head",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            64,
+            80,
+            56,
+            80
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "o1THyJ",
+              "name": "Head Crumb",
+              "fill": "$coral-text",
+              "content": "← Neko Chillin’  /  ✓ Nº 03 · Web app",
+              "fontFamily": "$mono",
+              "fontSize": 15,
+              "fontWeight": "normal",
+              "letterSpacing": 0.2
+            },
+            {
+              "type": "text",
+              "id": "h7qJO",
+              "name": "Story Title",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "1 cm = 1 cm,\ntruescale.",
+              "lineHeight": 1,
+              "fontFamily": "$font",
+              "fontSize": 104,
+              "fontWeight": "500",
+              "letterSpacing": -3.2
+            },
+            {
+              "type": "text",
+              "id": "R8TB6",
+              "name": "Story Intro",
+              "fill": "$ink",
+              "textGrowth": "fixed-width",
+              "width": 900,
+              "content": "Wallpaper penggaris berskala asli: pilih perangkat, atur gayanya, unduh PNG — 1 cm di gambar sama dengan 1 cm di layarmu.",
+              "lineHeight": 1.45,
+              "fontFamily": "$font",
+              "fontSize": 24,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "e6wxc",
+              "name": "Story Meta",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 48,
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lw9Bd",
+                  "name": "Meta Tahun",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mRocd",
+                      "name": "Meta Key",
+                      "fill": "$gray",
+                      "content": "Tahun",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "J0Mkj4",
+                      "name": "Meta Value",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "2026",
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CQRSQ",
+                  "name": "Meta Jenis",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DjgJ2",
+                      "name": "Meta Key",
+                      "fill": "$gray",
+                      "content": "Jenis",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "Zmtqt",
+                      "name": "Meta Value",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Web app · tanpa server",
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XAvFr",
+                  "name": "Meta Bagianku",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "F4Wr30",
+                      "name": "Meta Key",
+                      "fill": "$gray",
+                      "content": "Bagianku",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZO6hC",
+                      "name": "Meta Value",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Rancang dan bangun",
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KNE4K",
+                  "name": "Meta Versi",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Ye6OF",
+                      "name": "Meta Key",
+                      "fill": "$gray",
+                      "content": "Alamat",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "CcCfg",
+                      "name": "Meta Value",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "truescale.nekomade.com · gratis",
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "l9ooC",
+          "name": "Story Hero",
+          "width": "fill_container",
+          "padding": [
+            0,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "LlBHG",
+              "name": "Hero Panel",
+              "clip": true,
+              "width": "fill_container",
+              "height": 640,
+              "fill": "#F3F0E9",
+              "cornerRadius": 24,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lBAPU",
+                  "x": 80,
+                  "y": 56,
+                  "name": "Truescale Editor",
+                  "width": 1120,
+                  "height": 731,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "assets/img/works/truescale/truescale-desktop.png",
+                    "mode": "cover"
+                  },
+                  "cornerRadius": [
+                    14,
+                    14,
+                    0,
+                    0
+                  ],
+                  "stroke": "#E2DCCF",
+                  "strokeWidth": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IfzVK",
+          "name": "Story CTA",
+          "width": "fill_container",
+          "gap": 24,
+          "padding": [
+            32,
+            80,
+            64,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "c5gZ5T",
+              "name": "Buka Truescale Button",
+              "fill": "$ink",
+              "cornerRadius": 999,
+              "gap": 8,
+              "padding": [
+                14,
+                22,
+                14,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CWRAb",
+                  "name": "Button Label",
+                  "fill": "$bg",
+                  "content": "Buka Truescale",
+                  "fontFamily": "$font",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "icon",
+                  "id": "kkyhS",
+                  "name": "Button Icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "arrow-up-right",
+                  "library": "lucide",
+                  "fill": "$bg"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "d5SwSs",
+              "name": "CTA Note",
+              "fill": "$gray",
+              "content": "truescale.nekomade.com · gratis, langsung di browser",
+              "fontFamily": "$mono",
+              "fontSize": 15,
+              "fontWeight": "normal",
+              "letterSpacing": 0.2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hgGMs",
+          "name": "Story Kenapa dibikin",
+          "width": "fill_container",
+          "padding": [
+            0,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "m8CLa",
+              "name": "Row",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 64,
+              "padding": [
+                72,
+                0,
+                96,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wqEG2",
+                  "name": "Rail",
+                  "width": 280,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n7XUw",
+                      "name": "Rail No",
+                      "fill": "$gray",
+                      "content": "01 / Kenapa dibikin",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "i2Wrt",
+                      "name": "Rail Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Penggarisnya meleset.",
+                      "lineHeight": 1.1,
+                      "fontFamily": "$font",
+                      "fontSize": 38,
+                      "fontWeight": "600",
+                      "letterSpacing": -1.2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "JlYqu",
+                  "name": "Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Jkh7O",
+                      "name": "Lead",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Wallpaper penggaris itu praktis — selama ukurannya benar. Yang beredar ternyata cuma pas di satu jenis layar.",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font",
+                      "fontSize": 32,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.9
+                    },
+                    {
+                      "type": "text",
+                      "id": "lWhmJ",
+                      "name": "Text",
+                      "fill": "$gray",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Gambarnya dibuat untuk satu resolusi. Dipasang di laptop lain, 10 cm di gambar bisa jadi 11,7 cm di layar. Kelihatannya penggaris, tapi kalau dipakai mengukur, hasilnya salah.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "A12jqW",
+                      "name": "Text",
+                      "fill": "$gray",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Masalahnya bukan di gambar, tapi di kerapatan layar. MacBook Air 13,6″ memuat 88 titik per cm, laptop 15,6″ biasa cuma 56. Gambar yang sama, ukuran fisiknya beda.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fGovy",
+          "name": "Story Jadinya",
+          "width": "fill_container",
+          "padding": [
+            0,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "v1xCV",
+              "name": "Row",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "top": 1
+              },
+              "gap": 64,
+              "padding": [
+                72,
+                0,
+                96,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kGFY4",
+                  "name": "Rail",
+                  "width": 280,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gP1DW",
+                      "name": "Rail No",
+                      "fill": "$gray",
+                      "content": "02 / Jadinya",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    },
+                    {
+                      "type": "text",
+                      "id": "J4xyV3",
+                      "name": "Rail Title",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Hitung dulu, baru gambar.",
+                      "lineHeight": 1.1,
+                      "fontFamily": "$font",
+                      "fontSize": 38,
+                      "fontWeight": "600",
+                      "letterSpacing": -1.2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nozkl",
+                  "name": "Content",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "o5x99",
+                      "name": "Lead",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Truescale menghitung kerapatan layarmu dulu, baru menggambar penggaris di atasnya.",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font",
+                      "fontSize": 32,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.9
+                    },
+                    {
+                      "type": "text",
+                      "id": "w3ByYa",
+                      "name": "Text",
+                      "fill": "$gray",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Pilih perangkat, atur gaya dan warnanya, unduh PNG. Layar yang tidak ada di daftar bisa diukur pakai kartu ATM. Semuanya jalan di browser — tanpa daftar, tanpa server.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font",
+                      "fontSize": 20,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kFmHm",
+                      "name": "Janji",
+                      "width": "fill_container",
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "top": 1
+                      },
+                      "layout": "vertical",
+                      "padding": [
+                        8,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "q3Opt",
+                          "name": "Ukurannya pas",
+                          "width": "fill_container",
+                          "stroke": "$line",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 24,
+                          "padding": [
+                            16,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "F0UVRW",
+                              "name": "Key",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 240,
+                              "content": "Ukurannya pas",
+                              "fontFamily": "$font",
+                              "fontSize": 20,
+                              "fontWeight": "500",
+                              "letterSpacing": -0.3
+                            },
+                            {
+                              "type": "text",
+                              "id": "o3cXz",
+                              "name": "Val",
+                              "fill": "$gray",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Bedanya dengan penggaris asli tidak sampai 2 mm.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "$font",
+                              "fontSize": 18,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "N7v6jI",
+                          "name": "Jadi dalam 1 menit",
+                          "width": "fill_container",
+                          "stroke": "$line",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 24,
+                          "padding": [
+                            16,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "SHFeO",
+                              "name": "Key",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 240,
+                              "content": "Jadi dalam 1 menit",
+                              "fontFamily": "$font",
+                              "fontSize": 20,
+                              "fontWeight": "500",
+                              "letterSpacing": -0.3
+                            },
+                            {
+                              "type": "text",
+                              "id": "bm504",
+                              "name": "Val",
+                              "fill": "$gray",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Pilih perangkat, unduh, pasang. Selesai.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "$font",
+                              "fontSize": 18,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RRrvh",
+                          "name": "Semua angka terlihat",
+                          "width": "fill_container",
+                          "stroke": "$line",
+                          "strokeWidth": {
+                            "bottom": 1
+                          },
+                          "gap": 24,
+                          "padding": [
+                            16,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "RXx36",
+                              "name": "Key",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 240,
+                              "content": "Semua angka terlihat",
+                              "fontFamily": "$font",
+                              "fontSize": 20,
+                              "fontWeight": "500",
+                              "letterSpacing": -0.3
+                            },
+                            {
+                              "type": "text",
+                              "id": "MbIlv",
+                              "name": "Val",
+                              "fill": "$gray",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Tidak ada yang ketutupan poni kamera, menu bar, atau Dock.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "$font",
+                              "fontSize": 18,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XO2YQ",
+          "name": "Story Penutup",
+          "width": "fill_container",
+          "padding": [
+            0,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "uRYLB",
+              "name": "Story Penutup Inner",
+              "width": "fill_container",
+              "stroke": "$line",
+              "layout": "vertical",
+              "gap": 40,
+              "padding": [
+                0,
+                0,
+                96,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mqqqy",
+                  "name": "Catatan",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 24,
+                  "gap": 64,
+                  "padding": [
+                    40,
+                    48
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "p5NQo",
+                      "name": "Penutup Lead",
+                      "fill": "$ink",
+                      "textGrowth": "fixed-width",
+                      "width": 480,
+                      "content": "Tanpa daftar. Tanpa instal. Buka, pilih, langsung pakai.",
+                      "lineHeight": 1.2,
+                      "fontFamily": "$font",
+                      "fontSize": 32,
+                      "fontWeight": "500",
+                      "letterSpacing": -0.8
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rDOUZ",
+                      "name": "Catatan Text Wrap",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lalrw",
+                          "name": "Catatan Tag",
+                          "fill": "$coral-text",
+                          "content": "✦ Coba sendiri",
+                          "fontFamily": "$mono",
+                          "fontSize": 15,
+                          "fontWeight": "normal",
+                          "letterSpacing": 0.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "VQhxR",
+                          "name": "Catatan Text",
+                          "fill": "$gray",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Gratis, bisa dibagikan lewat link, jalan di Mac, Windows, dan iPhone. Coba di truescale.nekomade.com — atau colek kalau penggarisnya meleset di layarmu.",
+                          "lineHeight": 1.55,
+                          "fontFamily": "$font",
+                          "fontSize": 17,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nciac",
+          "name": "Kontak Section",
+          "width": "fill_container",
+          "fill": "$coral-text",
+          "padding": [
+            0,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "Eimki",
+              "name": "Kontak Inner",
+              "width": "fill_container",
+              "stroke": "$line",
+              "layout": "vertical",
+              "gap": 28,
+              "padding": [
+                120,
+                0,
+                128,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "WR3dZ",
+                  "name": "Kontak Eyebrow",
+                  "fill": "$bg",
+                  "content": "Nekonya lagi melek, nih.",
+                  "fontFamily": "$mono",
+                  "fontSize": 15,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.2
+                },
+                {
+                  "type": "frame",
+                  "id": "hlsF6",
+                  "name": "Kontak Headline Row",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "z14IC",
+                      "name": "Kontak Headline",
+                      "fill": "$bg",
+                      "content": "Mau bikin apa?",
+                      "lineHeight": 1,
+                      "fontFamily": "$font",
+                      "fontSize": 112,
+                      "fontWeight": "500",
+                      "letterSpacing": -3.4
+                    },
+                    {
+                      "type": "icon",
+                      "id": "XHyBb",
+                      "name": "Kontak Arrow",
+                      "width": 80,
+                      "height": 80,
+                      "icon": "arrow-up-right",
+                      "library": "lucide",
+                      "fill": "$tint-warm"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "FfjCO",
+                  "name": "Kontak Text",
+                  "fill": "$bg",
+                  "textGrowth": "fixed-width",
+                  "width": 520,
+                  "content": "Barang baru, barang lama yang mau dibongkar, atau ide yang agak aneh — ceritain aja, nanti kita otak-atik bareng.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "$font",
+                  "fontSize": 21,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "w4PHuz",
+                  "name": "Kontak Links",
+                  "gap": 28,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "K2TFIZ",
+                      "name": "Kontak CTA",
+                      "fill": "$bg",
+                      "cornerRadius": 999,
+                      "gap": 8,
+                      "padding": [
+                        14,
+                        22,
+                        14,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hVPvi",
+                          "name": "CTA Label",
+                          "fill": "$ink",
+                          "content": "Colek neko",
+                          "fontFamily": "$font",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "lseNv",
+                          "name": "CTA Arrow",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "fill": "$ink"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "bYsGl",
+                      "name": "Email",
+                      "fill": "$bg",
+                      "content": "heyneko@nekomade.com",
+                      "fontFamily": "$font",
+                      "fontSize": 22,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vGl8t",
+                      "name": "Socials",
+                      "fill": "$bg",
+                      "content": "Instagram  ·  GitHub  ·  LinkedIn",
+                      "fontFamily": "$mono",
+                      "fontSize": 15,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "ellipse",
+              "id": "OJpLF",
+              "layoutPosition": "absolute",
+              "x": 907,
+              "y": 52,
+              "name": "Neko Disc",
+              "fill": "$tint-warm",
+              "width": 440,
+              "height": 440
+            },
+            {
+              "type": "frame",
+              "id": "HjkUR",
+              "layoutPosition": "absolute",
+              "x": 779,
+              "y": -103,
+              "name": "Neko — berbaring-memeluk-benang",
+              "width": 700,
+              "height": 700,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "assets/img/illustration/neko-berbaring-memeluk-benang.png",
+                "mode": "contain"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "y3Y2jK",
+          "name": "Footer",
+          "width": "fill_container",
+          "padding": [
+            0,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "JrCjD",
+              "name": "Footer Inner",
+              "width": "fill_container",
+              "stroke": "$line",
+              "strokeWidth": {
+                "top": 1
+              },
+              "padding": [
+                24,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dzVoK",
+                  "name": "Copyright",
+                  "fill": "$gray",
+                  "content": "© 2026 nekomade",
+                  "fontFamily": "$mono",
+                  "fontSize": 15,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.2
+                },
+                {
+                  "type": "text",
+                  "id": "q5Jtyg",
+                  "name": "Footer Mid",
+                  "fill": "$gray",
+                  "content": "Dibikin Dani, sambil rebahan.",
+                  "fontFamily": "$mono",
+                  "fontSize": 15,
+                  "fontWeight": "normal",
+                  "letterSpacing": 0.2
+                },
+                {
+                  "type": "text",
+                  "id": "HoPju",
                   "name": "Footer Right",
                   "fill": "$ink",
                   "content": "Nekonya mager lagi  ·  ↑ Balik ke atas",
